@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text_anime</title>
+    <style>
+        .fade-in {
+          animation: fadeIn 2s ease-in-out;
+        }
+      
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+      </style>
+      <style>
+        .typing {
+          font-size: 24px;
+          white-space: nowrap;
+          overflow: hidden;
+          border-right: 2px solid black;
+          width: 0;
+          animation: typing 4s steps(20, end), blink 0.5s step-end infinite alternate;
+        }
+      
+        @keyframes typing {
+          from {
+            width: 0;
+          }
+          to {
+            width: 100%;
+          }
+        }
+      
+        @keyframes blink {
+          from {
+            border-right-color: black;
+          }
+          to {
+            border-right-color: transparent;
+          }
+        }
+      </style>
+</head>
+<body>
+    <div class="fade-in">文字淡入效果</div>
+
+    <!-- <div class="typing">這是打字機動畫效果</div> -->
+
+    <div id="text"></div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  const text = "這是逐字顯示的文字動畫！";
+  const container = document.getElementById("text");
+  let index = 0;
+
+  function typeEffect() {
+    if (index < text.length) {
+      container.textContent += text[index];
+      index++;
+      setTimeout(typeEffect, 100); // 每個字出現的時間
+    }
+  }
+  typeEffect();
+</script>
+
+
+</body>
+</html>

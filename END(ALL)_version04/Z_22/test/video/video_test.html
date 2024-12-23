@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影片自動播放示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+        }
+        .video-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            border: 5px solid #647b91;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        video {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .video-overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(179, 34, 34, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="Rain_MP.mp4" type="video/mp4">
+            <p>您的瀏覽器不支援 HTML5 影片播放。</p>
+        </video>
+        <div class="video-overlay">持續播放示例影片</div>
+    </div>
+</body>
+</html>
